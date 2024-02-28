@@ -1,0 +1,43 @@
+.nasa-mrp-container {
+    .nasa-mrp-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3rem;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 5rem;
+        max-height: 5rem;
+        padding-top: 1rem;
+        padding-left: 7rem;
+        
+        button {
+            min-height: 2.5rem;
+            max-height: 2.5rem;
+            min-width: 5rem;
+            max-width: 5rem;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    .nasa-mrp-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    
+        .nasa-mrp-object {
+            display: inline-block;
+            max-width: 30rem;
+            margin: 1rem;
+            padding: 1rem;
+    
+            .nasa-mrp-object-img {
+                min-width: 24rem;
+                max-width: 24rem;
+                min-height: 19rem;
+                max-height: 19rem;
+            }
+        }
+    }
+}

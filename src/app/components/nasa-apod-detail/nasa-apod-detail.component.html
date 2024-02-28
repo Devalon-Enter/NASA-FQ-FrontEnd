@@ -1,0 +1,17 @@
+<div class="nasa-apod-detail-container">
+    <div class="nasa-apod-detail-img">
+        <img [src]="nasaApod?.url" [alt]="nasaApod?.title">
+    </div>
+    <div class="nasa-apod-detail-content">
+        <div class="nasa-apod-detail-title">
+            <h1>{{nasaApod?.title}}</h1>
+            <p><span>Published date: </span>{{nasaDate}}</p>
+            <p *ngIf="nasaApod?.copyright != null; else elseBlock"><span>Copyright: </span>{{nasaApod?.copyright}}</p>
+            <ng-template #elseBlock><p style="color: red;"><span>Copyright: </span>Not found</p></ng-template>
+        </div>
+        <div class="nasa-apod-detail-desc">
+            <h3>Description</h3>
+            <p>{{nasaApod?.explanation}}</p>
+        </div>
+    </div>
+</div>

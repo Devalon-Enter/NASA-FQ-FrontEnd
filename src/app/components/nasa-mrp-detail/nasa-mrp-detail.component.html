@@ -1,0 +1,27 @@
+
+<div class="nasa-mrp-detail-container">
+    <div class="nasa-mrp-detail-img">
+        <img [src]="nasaMrp?.img_src" [alt]="nasaMrp?.camera?.name">
+    </div>
+    <div class="nasa-mrp-detail-content">
+        <div class="nasa-mrp-detail-img-details">
+            <h1>{{nasaMrp?.rover?.name}}</h1>
+            <p><span>Camera: </span><br>{{nasaMrp?.camera?.full_name}}</p>
+            <p><span>Image captured: </span><br>{{nasaMrp?.earth_date}}</p>
+        </div>
+        <div class="nasa-mrp-detail-rover-info">
+            <h2>General Rover Information</h2>
+            <p><span>Landing Date: </span><br>{{nasaMrp?.rover?.landing_date}}</p>
+            <p><span>Launch Date: </span><br>{{nasaMrp?.rover?.launch_date}}</p>
+            <p><span>Max Sol (Solar Day on Mars): </span><br>{{nasaMrp?.rover?.max_sol}}</p>
+            <p><span>Max Date (last public transmission): </span><br>{{nasaMrp?.rover?.max_date}}</p>
+            <p><span>Total photos taken: </span><br>{{nasaMrp?.rover?.total_photos}}</p>
+            <p><span>Status: </span><br>{{nasaMrp?.rover?.status}}</p>
+        </div>
+        <div class="nasa-mrp-detail-cameras">
+            <mat-divider vertical></mat-divider>
+            <h2>Equipped cameras</h2>
+            <p *ngFor="let camera of nasaMrp?.rover?.cameras"><span>Camera: </span><br>{{camera.full_name}}</p>
+        </div>
+    </div>
+</div>

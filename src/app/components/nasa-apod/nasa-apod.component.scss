@@ -1,0 +1,44 @@
+.nasa-apod {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 1rem;
+
+    .nasa-apod-object {
+        display: inline-block;
+        background-color: #f3f3f7;
+        max-width: 30rem;
+        margin: 1rem 1rem 1rem 0;
+        padding: 1rem;
+
+        .nasa-apod-object-title {
+            font-weight: 600;
+            font-size: 1rem;
+            max-width: 20rem;
+            padding-bottom: 1rem;
+        }
+
+        .nasa-apod-object-img {
+            min-width: 24rem;
+            max-width: 24rem;
+            min-height: 19rem;
+            max-height: 19rem;
+        }
+
+        .nasa-apod-img-replace {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 24rem;
+            max-width: 24rem;
+            min-height: 19rem;
+            max-height: 19rem;
+            background-color: #cfcfcf;
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+}

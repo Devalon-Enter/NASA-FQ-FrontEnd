@@ -1,0 +1,20 @@
+<div class="nasa-apod">
+    <mat-card class="nasa-apod-object" *ngFor="let nasaObject of nasaObjects" routerLink="{{nasaObject.id}}">
+        <mat-card-header>
+            <mat-card-title class="nasa-apod-object-title">{{nasaObject.title}}</mat-card-title>
+        </mat-card-header>
+        <img *ngIf="nasaObject.video != true; else elseBlock" class="nasa-apod-object-img" [src]="nasaObject.url">
+        <ng-template #elseBlock>
+            <div class="nasa-apod-img-replace">
+                <p style="color: red;">Image not found</p>
+            </div>
+        </ng-template>
+        <mat-card-content>
+            <p *ngIf="nasaObject.copyright != null; else copyrightReplace"><span>Copyright: </span>{{nasaObject.copyright}}</p>
+            <ng-template #copyrightReplace>
+                <p style="color: red;"><span>Copyright: </span>Not found</p>
+            </ng-template>
+            <p><span>Published date: </span>{{nasaObject.date}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

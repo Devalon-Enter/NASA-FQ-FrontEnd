@@ -1,0 +1,30 @@
+.nasa-apod-detail-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    background-color: #f3f3f7;
+    padding: 1rem 1rem 1rem 0;
+    height: 100%;
+
+    .nasa-apod-detail-img {
+        display: block;
+        
+        img {
+            min-width: 53rem;
+            min-height: 32rem;
+            max-width: 53rem;
+            max-height: 32rem;            
+            padding: 1rem; 
+        }
+    }
+
+    .nasa-apod-detail-content {
+        padding: 1rem;
+        .nasa-apod-detail-title {
+            margin: 0;
+            h1 {
+                margin: inherit;
+            }
+        }
+    }
+}

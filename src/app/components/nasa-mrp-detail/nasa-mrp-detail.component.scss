@@ -1,0 +1,65 @@
+.nasa-mrp-detail-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f3f3f7;
+    padding: 1rem 1rem 1rem 0;
+
+    .nasa-mrp-detail-img {
+        display: block;
+        img {
+            min-width: 53rem;
+            min-height: 32rem;
+            max-width: 53rem;
+            max-height: 32rem;
+            padding: 1rem; 
+        }
+    }
+
+    .nasa-mrp-detail-content {
+        display: grid;
+        grid-template: 9rem / 1fr 1fr;
+        grid-template-areas: 
+        "title ."
+        "rover_info cameras";
+        
+        .nasa-mrp-detail-img-details {
+            grid-area: title;
+            h1 {
+                margin: 0.5rem 0;
+            }
+            p {
+                margin: 0.5rem 0;
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .nasa-mrp-detail-rover-info {
+            grid-area: rover_info;
+            h2 {
+                margin: 0.5rem 0;
+            }
+            p {
+                margin: 0.5rem 0;
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .nasa-mrp-detail-cameras {
+            grid-area: cameras;
+            padding-left: 1rem;
+            h2 {
+                margin: 0.5rem 0;
+            }
+            p {
+                margin: 0.5rem 0;
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

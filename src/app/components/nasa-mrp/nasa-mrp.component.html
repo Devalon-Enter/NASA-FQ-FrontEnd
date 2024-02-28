@@ -1,0 +1,34 @@
+<div class="nasa-mrp-container">
+    <div class="nasa-mrp-menu">
+        <mat-form-field>
+            <mat-label>Rover</mat-label>
+            <mat-select [(ngModel)]="rover">
+                <mat-option value="curiosity">Curiosity</mat-option>
+                <mat-option value="opportunity">Opportunity</mat-option>
+                <mat-option value="spirit">Spirit</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Sol</mat-label>
+            <input matInput type="number" [(ngModel)]="sol">
+        </mat-form-field>
+        <button
+        (click)="search()"
+        mat-raised-button
+        color="primary"
+        >Search</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="nasa-mrp-content">
+        <mat-card class="nasa-mrp-object" *ngFor="let nasaObject of nasaObjects" routerLink="{{nasaObject.id}}">
+            <mat-card-header>
+                <mat-card-title class="nasa-mrp-object-title">Rover: {{nasaObject.rover.name}}</mat-card-title>
+                <mat-card-subtitle class="nasa-mrp-object-subtitle">{{nasaObject.camera.full_name}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="nasa-mrp-object-img" [src]="nasaObject.img_src" [alt]="nasaObject.rover.name">
+            <mat-card-content>
+                <p><span>Image caputured: </span>{{nasaObject.earth_date}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
