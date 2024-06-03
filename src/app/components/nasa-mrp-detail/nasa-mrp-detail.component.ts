@@ -27,10 +27,4 @@ export class NasaMrpDetailComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.nasaMrp = this.nasaService.getCachedNasaMrpImage(id);
   }
-
-  calculateEarthDate() {
-    let roverSol: number= Number(this.nasaMrp?.rover.max_sol);
-
-    const roverSolinSeconds: number = this.sol * roverSol;
-  }
 }

@@ -10,7 +10,7 @@ const LOCAL_STORAGE_APODKEY: string = "apod-Map";
   providedIn: 'root'
 })
 export class NasaService {
-  nasaApodCachedImages: Map<string, NasaApod> = new Map();
+  nasaApodCachedImages: Map<number, NasaApod> = new Map();
   nasaMrpCachedImages: Map<number, NasaMrp> = new Map();
   
 
@@ -37,7 +37,15 @@ export class NasaService {
     .pipe(
       tap(apods => { 
         apods.forEach(apod => {
-          this.nasaApodCachedImages.set(apod.id, apod);
+          if(this.nasaApodCachedImages.size != 0) {
+            const cacheSize: number = this.nasaApodCachedImages.size;
+            apod.id = cacheSize + 1;
+            console.log(apod.id);
+            this.nasaApodCachedImages.set(apod.id, apod);
+          } else {
+            this.nasaApodCachedImages.set(apod.id, apod);
+          }
+          
         })
         this.saveLocalStorage();  
       })
@@ -53,7 +61,7 @@ export class NasaService {
     return result;
   }
 
-  getCachedNasaApodImage(id: string): NasaApod | undefined {
+  getCachedNasaApodImage(id: number): NasaApod | undefined {
     return this.nasaApodCachedImages.get(id);
   }
 

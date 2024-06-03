@@ -1,4 +1,5 @@
 <div class="nasa-apod">
+    <mat-divider></mat-divider>
     <mat-card class="nasa-apod-object" *ngFor="let nasaObject of nasaObjects" routerLink="{{nasaObject.id}}">
         <mat-card-header>
             <mat-card-title class="nasa-apod-object-title">{{nasaObject.title}}</mat-card-title>

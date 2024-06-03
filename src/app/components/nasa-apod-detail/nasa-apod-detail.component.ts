@@ -20,7 +20,7 @@ export class NasaApodDetailComponent {
   ) {}
 
   ngOnInit(){
-    const id = String(this.route.snapshot.paramMap.get('id'));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.nasaApod = this.nasaService.getCachedNasaApodImage(id);
     console.log("format date reached?");
     this.formatDate();
@@ -30,6 +30,5 @@ export class NasaApodDetailComponent {
     this.nasaDate = format(String(this.nasaApod?.date), "do MMMM yyyy", );
     return this.nasaDate;
   }
-  
 }
  

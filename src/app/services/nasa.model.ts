@@ -1,5 +1,5 @@
 export interface NasaApod {
-    id: string,
+    id: number,
     title: string,
     date: string,
     url: string,
